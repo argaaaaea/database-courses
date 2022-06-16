@@ -1,0 +1,56 @@
+{% include "navbar_pemain.html"%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title> List Warna Kulit </title>
+
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+    </style>    
+</head>
+<body>
+    <h1> Hello {{username}} </h1>
+
+    {% if list_warna_kulit %}
+        <table>
+            <tr>
+                <th scope="col">Kode</th>
+                <th scope="col"> </th>
+            </tr>
+
+            {% for wk in list_warna_kulit %}
+                <tr>
+                    <td>
+                        {{ wk.kode }}
+                    </td>
+                    <td>
+                        <div style="background-color: {{ wk.kode }}; width: 50px; height: 20px; border-radius: 8px;"> </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        <table>
+            {% else %}
+                <p>Belum ada warna kulit</p>
+            {% endif %}
+</body>
+</html>
+{% endblock %}

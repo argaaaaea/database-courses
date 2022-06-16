@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> List Pemain </title>
+</head>
+<body>
+    <h1> Hello {{username}} </h1>
+
+    {% if list_tokoh %}
+        <table>
+            <tr>
+                <th scope="col">Nama</th>
+                <th scope="col">Jenis Kelamin</th>
+                <th scope="col">Status</th>
+                <th scope="col">XP</th>
+                <th scope="col">Energi</th>
+                <th scope="col">Kelaparan</th>
+                <th scope="col">Hubungan Sosial</th>
+                <th scope="col">Warna Kulit</th>
+                <th scope="col">Level</th>
+                <th scope="col">Sifat</th>
+                <th scope="col">Pekerjaan</th>
+                <th scope="col">Id Rambut</th>
+                <th scope="col">Id Mata</th>
+                <th scope="col">Id Rumah</th>
+                <th scope="col">Action</th>
+            </tr>
+
+            {% for pemain in list_tokoh %}
+                <tr>
+                    <td>{{ pemain.nama }}</td>
+                    <td>{{ pemain.jenis_kelamin }}</td>
+                    <td>{{ pemain.status }}</td>
+                    <td>{{ pemain.xp }}</td>
+                    <td>{{ pemain.energi }}</td>
+                    <td>{{ pemain.kelaparan }}</td>
+                    <td>{{ pemain.hubungan_sosial }}</td>
+                    <td>{{ pemain.warna_kulit }}</td>
+                    <td>{{ pemain.level }}</td>
+                    <td>{{ pemain.sifat }}</td>
+                    <td>{{ pemain.pekerjaan }}</td>
+                    <td>{{ pemain.id_rambut }}</td>
+                    <td>{{ pemain.id_mata }}</td>
+                    <td>{{ pemain.id_rumah }}</td>
+                    <td>
+                        <ul>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <li>
+                                    <button name="NamaTokoh" type="submit" value='{{ pemain.nama }}'>Detail</button>
+                                    <button name="Nama" type="submit" value='{{ pemain.nama }}'>Update</button>
+                                </li>
+                            </form>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        <table>
+            {% else %}
+                <p>Belum ada tokoh yang dibuat</p>
+            {% endif %}
+</body>
+</html>
+

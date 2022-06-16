@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Option</title>
+</head>
+<body>
+    <h1>Masukkan data diri untuk membuat akun</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form" id="addPekerjaan">
+            <label for="NamaPekerjaan">Nama pekerjaan</label>
+            <input id="Kerja" name="Kerja" type="text" placeholder="NamaPekerjaan" value="{{Kerja}}" />
+
+            <br />
+            <label for="BaseHonor">Base honor</label>
+            <input id="BaseHonor" name="BaseHonor" type="number" placeholder="Base honor" />
+
+            <br />
+            <input id="adminButton" type="submit" values="Simpan" />
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+

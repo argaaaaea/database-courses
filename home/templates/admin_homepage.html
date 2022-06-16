@@ -1,0 +1,10 @@
+{% include "navbar_admin.html"%}
+{% block content %}
+    <h1>Selamat datang di Homepage Admin</h1>
+
+    <text>Username: {{ username }}</text>
+    <br />
+    <a  href="/logout/">
+        <input class="padded-button" type="submit" value="logout" />
+    </a>
+{% endblock %}

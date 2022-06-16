@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Option</title>
+</head>
+<body>
+    <h1>Masukkan data diri untuk membuat akun</h1>
+    <form method="POST">
+        <h2>Jenis Akun</h2>
+        
+        <select id="jenisAkunSelect" name="role1">
+            <option value="pemain">pemain</option>
+            <option value="admin">admin</option>
+        </select>
+
+        <br />
+        <button id="jenisAkunButton" type="submit">pilih</button>
+
+        <div class="form" id="adminSection">
+            <h2>Form pendaftaran admin</h2>
+            <label for="UsernameForAdmin">username</label>
+            <input id="usernameForAdmin" name="usernameForAdmin" type="text" placeholder="Username" />
+
+            <br />
+            <label for="passwordForAdmin">password</label>
+            <input id="passwordForAdmin" name="passwordForAdmin" type="password" placeholder="Password" />
+
+            <br />
+            <input id="adminButton" type="submit" values="Register" />
+        </div>
+
+        <div class="form" id="pemainSection">
+            <h2>Form pendaftaran pemain</h2>
+            <label for="usernameForPemain">username</label>
+            <input id="usernameForPemain" name="usernameForPemain" type="text" placeholder="Username" />
+
+            <br />
+            <label for="emailForPemain">email</label>
+            <input id="emailForPemain" name="emailForPemain" type="email" placeholder="email" />
+
+            <br />
+            <label for="passwordForPemain">password</label>
+            <input id="passwordForPemain" name="passwordForPemain" type="password" placeholder="Password" />
+
+            <br />
+            <label for="noHpForPemain">Nomor HP</label>
+            <input id="noHpForPemain" name="noHpForPemain" type="tel" placeholder="Nomor HP" />
+
+            <br />
+            <input type="submit" value="Register" />
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+

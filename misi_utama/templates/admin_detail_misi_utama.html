@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title> Detail Misi Utama </title>
+
+<body>
+  {% include "navbar_admin.html"%}
+  {% block content %}
+    <h1> Hello {{username}} </h1>
+    <p style="text-align:center;"> <b>Detail Misi Utama</b></p>
+
+    {% if list_misi %}   
+      {% for m in list_misi %}
+        <ul>
+          <p><b>Nama: </b> {{m.nama}}</p>
+          <p><b>Efek Energi: </b> {{m.efek_energi}}</p>
+          <p><b>Efek Hubungan Sosial: </b> {{m.efek_hubungan_sosial}}</p>
+          <p><b>Efek Kelaparan: </b>{{m.efek_kelaparan}}</p>
+          <p><b>Syarat Energi: </b>{{m.syarat_energi}}</p>
+          <p><b>Syarat Hubungan Sosial: </b>{{m.syarat_hubungan_sosial}}</p>
+          <p><b>Syarat Kelaparan: </b>{{m.syarat_kelaparan}}</p>
+          <p><b>Completion Time: </b>{{m.completion_time}}</p>
+          <p><b>Reward Koin: </b>{{m.reward_koin}}</p>
+          <p><b>Reward XP: </b>{{m.reward_xp}}</p>
+        </ul>
+      {% endfor %}
+    {% endif %}
+</body>
+{% endblock %}
+</html>
+

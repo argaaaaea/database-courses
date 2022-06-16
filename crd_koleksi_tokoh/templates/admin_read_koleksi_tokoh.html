@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    {% include 'navbar_admin.html' %}
+    <h1 class="text-center mt-3">LIST KOLEKSI TOKOH</h1>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Username Pengguna</th>
+            <th scope="col">Tokoh</th>
+            <th scope="col">Id Koleksi</th>
+          </tr>
+        </thead>
+        {% for k in list_koleksi_tokoh %}
+        <tbody>
+          <tr>
+            <td>{{k.username_pengguna}}</td>
+            <td>{{k.nama_tokoh}}</td>
+            <td>{{k.id_koleksi}}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

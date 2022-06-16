@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title> Ubah Menjalankan Misi Utama </title>
+
+<body>
+  {% include "navbar_admin.html"%}
+  {% block content %}
+    <h1> Hello {{username}} </h1>
+    <p style="text-align:center;"> <b>Form Ubah Menjalankan Misi Utama</b></p>
+
+    {% if list_menjalankan_misi %}   
+      {% for m in list_menjalankan_misi %}
+      <form method="POST">
+        {% csrf_token %}
+        <div class="form" id="UpdateMenjalankanMisi">
+          <ul>
+            <label for="NamaTokoh">Nama tokoh: </label>
+            <input id="NamaTokoh" name="NamaTokoh" type="text" placeholder="{{m.nama_tokoh}}" disabled/>
+            <br>
+
+            <label for="NamaMisi">Nama misi: </label>
+            <input id="NamaMisi" name="NamaMisi" type="text" placeholder="{{m.nama_misi}}" disabled/>
+            <br>
+
+            <label for="status">Status: {{m.status}} </label>
+            <input id="status" name="status" type="text" placeholder="Status" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+            <br>
+
+            <input id="adminButton" type="submit" values="Simpan" />
+
+          </ul>
+          </div>
+      </form>
+      {% endfor %}
+    {% endif %}
+</body>
+{% endblock %}
+</html>
+

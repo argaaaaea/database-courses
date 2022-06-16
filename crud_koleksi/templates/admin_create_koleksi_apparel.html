@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create Koleksi Apparel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    {% include 'navbar_admin.html' %}
+    <h1 class="text-center mt-3">FORM BUAT APPAREL</h1>
+    <form
+      method="POST"
+      class="container mt-5"
+      id="admin_create_koleksi_apparel_form"
+    >
+      {% csrf_token %}
+      <div class="mb-3">
+        <label class="form-label">ID</label>
+        <input required class="form-control" name="id_koleksi" value="{{new_id}}" readonly />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Nama Apparel</label>
+        <input required class="form-control" name="nama" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Harga Jual</label>
+        <input required class="form-control" name="harga_jual" type="number" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Harga Beli</label>
+        <input required class="form-control" name="harga_beli" type="number" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Warna Apparel</label>
+        <input required class="form-control" name="warna_apparel" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Kategori Apparel</label>
+        <select class="form-select" name="kategori_apparel">
+          <option selected value="">Kategori Apparel</option>
+          <!-- TODO: Change to real data from KATEGORI_APPAREL -->
+          {% for kategori in kategori_apparel %}
+          <option value="{{kategori.nama_kategori}}">{{kategori.nama_kategori}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Nama Pekerjaan</label>
+        <select class="form-select" name="nama_pekerjaan">
+          <option selected value="">Nama Pekerjaan</option>
+          <!-- TODO: Change to real data from PEKERJAAN -->
+          {% for p in pekerjaan %}
+          <option value="{{p.nama}}">{{p.nama}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary mx-auto d-block">
+        Simpan
+      </button>
+    </form>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <script>
+    $("#admin_create_koleksi_apparel_form").submit((e) => {
+      const hargaJualVal = $("input[name='harga_jual']").val();
+      const namaApparelVal = $("input[name='nama_apparel']").val();
+      const hargaBeliVal = $("input[name='harga_beli']").val();
+      const warnaApparelVal = $("input[name='warna_apparel']").val();
+      const kategoriApparelVal = $("select[name='kategori_apparel']").val();
+      const namaPekerjaanVal = $("select[name='nama_pekerjaan']").val();
+
+      if (
+        hargaJualVal === "" ||
+        namaApparelVal === "" ||
+        hargaBeliVal === "" ||
+        warnaApparelVal === "" ||
+        kategoriApparelVal === "" ||
+        namaPekerjaanVal === ""
+      ) {
+        e.preventDefault();
+        alert(
+          "Data yang diisikan belum lengkap, silahkan lengkapi data terlebih dahulu"
+        );
+      }
+    });
+  </script>
+</html>

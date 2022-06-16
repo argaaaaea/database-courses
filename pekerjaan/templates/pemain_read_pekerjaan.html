@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> List Pekerjaan </title>
+</head>
+<body>
+    <h1> Hello {{username}} </h1>
+
+    {% if list_pekerjaan %}
+        <table>
+            <tr>
+                <th scope="col">Nama Pekerjaan</th>
+                <th scope="col">Base Salary</th>
+            </tr>
+
+            {% for p in list_pekerjaan %}
+                <tr>
+                    <td>{{ p.nama }}</td>
+                    <td>{{ p.base_honor }}</td>
+                </tr>
+            {% endfor %}
+        <table>
+            {% else %}
+                <p>Belum ada pekerjaan yang digunakan</p>
+            {% endif %}
+</body>
+</html>
+

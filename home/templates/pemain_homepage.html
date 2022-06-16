@@ -1,0 +1,24 @@
+{% include "navbar_pemain.html" %}
+{% block content %}
+    <h1>Selamat datang di Homepage Pemain</h1>
+
+    <text>username: {{ username }} </text>
+    <br />
+
+    {% for data in list %}
+
+    <text>email: {{ data.email }} </text>
+    <br />
+
+    <text>Nomor HP: {{ data.no_hp }} </text>
+    <br />
+
+    <text> Koin: {{ data.koin }} </text>
+    <br />
+
+    {% endfor %}
+
+    <a  href="/logout/">
+        <input class="padded-button" type="submit" value="logout" />
+    </a>
+{% endblock %}

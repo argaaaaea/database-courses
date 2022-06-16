@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title> List Makan </title>
+
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+</head>
+
+<body>
+  {% include "navbar_admin.html"%}
+    {% block content %}
+
+    <h1> Hello {{username}} </h1>
+    <p style="text-align:center;"> <b>List Makan</b></p>
+
+    {% if list_makan %}
+        <table>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Username Pengguna</th>
+                <th scope="col">Tokoh</th>
+                <th scope="col">Nama Makanan</th>
+                <th scope="col">Waktu</th>
+            </tr>
+
+            {% for mk in list_makan %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{mk.username_pengguna}}</td>
+                <td>{{mk.nama_tokoh}}</td>
+                <td>{{mk.nama_makanan}}</td>
+                <td>{{mk.waktu}}</td>
+            </tr>
+        {% endfor %}    
+        </table>
+    {% endif %}
+</body>
+{% endblock %}
+</html>
+

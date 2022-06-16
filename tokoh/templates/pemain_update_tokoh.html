@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update tokoh</title>
+</head>
+<body>
+    <h1>Masukkan input untuk update tokoh</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="NamaTokoh">Nama: </label>
+        {% for name in nama%}
+        <text id='Nama' name='Nama'> {{name.nama}}</text>
+        {%endfor%}
+
+        <br />
+       
+        <label for="rambut">ID Rambut: </label>
+
+        <select id="rambut" name="rambut" placeholder="rambut">
+            {% for wk in id_rambut %}
+            <option value={{ wk.id_koleksi }}>{{ wk.id_koleksi }}</option>
+            {% endfor %}
+        </select>
+
+        <br />
+       
+        <label for="mata">ID Mata: </label>
+
+        <select id="mata" name="mata" placeholder="mata">
+            {% for m in id_mata %}
+            <option value={{ m.id_koleksi }}>{{ m.id_koleksi }}</option>
+            {% endfor %}
+        </select>
+
+        <br />
+       
+        <label for="rumah">ID Rumah: </label>
+
+        <select id="rumah" name="rumah" placeholder="rumah">
+            {% for r in id_rumah %}
+            <option value='{{ r.id_koleksi }}'>{{ r.id_koleksi }}</option>
+            {% endfor %}
+        </select>
+
+        <br />
+        
+            <input type="submit" value="Update" />
+    </form>
+</body>
+</html>
+
+
+
+

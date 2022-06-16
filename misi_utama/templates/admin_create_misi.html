@@ -1,0 +1,77 @@
+{% include "navbar_admin.html"%}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membuat Misi Utama</title>
+</head>
+<body>
+    <h1>Form Buat Misi Utama</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form" id="addMisiUtama">
+            <label for="NamaMisiUtama">Nama Misi Utama</label>
+            <input id="NamaMisiUtama" name="NamaMisiUtama" type="text" placeholder="Nama Misi Utama" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')" />
+
+            <br />
+            <label for="EfekEnergi">Efek Energi</label>
+            <input id="EfekEnergi" name="EfekEnergi" type="number" placeholder="Efek Energi" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <label for="EfekHubungan">Efek Hubungan</label>
+            <input id="EfekHubungan" name="EfekHubungan" type="number" placeholder="Efek Hubungan" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <label for="EfekKelaparan">Efek Kelaparan</label>
+            <input id="EfekKelaparan" name="EfekKelaparan" type="number" placeholder="Efek Kelaparan" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <label for="SyaratEnergi">Syarat Energi</label>
+            <input id="SyaratEnergi" name="SyaratEnergi" type="number" placeholder="Syarat Energi" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <label for="SyaratHubungan">Syarat Hubungan</label>
+            <input id="SyaratHubungan" name="SyaratHubungan" type="number" placeholder="Syarat Hubungan" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <label for="SyaratKelaparan">Syarat Kelaparan</label>
+            <input id="SyaratKelaparan" name="SyaratKelaparan" type="number" placeholder="Syarat Kelaparan" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <label for="CompletionTime">Completion Time</label>
+            <input id="completionTime" type="time" step="1" name="CompletionTime" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <label for="RewardKoin">Reward Koin</label>
+            <input id="RewardKoin" name="RewardKoin" type="number" placeholder="Reward Koin" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <label for="RewardXP">Reward XP</label>
+            <input id="RewardXP" name="RewardXP" type="number" placeholder="Reward XP" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <label for="Deskripsi">Deskripsi</label>
+            <input id="Deskripsi" name="Deskripsi" type="text" placeholder="Deskripsi"required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')" />
+            
+            <br />
+
+
+            <input id="adminButton" type="submit" values="Simpan" />
+        </div>
+    </form>
+</body>
+</html>
+{% endblock %}

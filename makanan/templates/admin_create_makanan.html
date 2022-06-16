@@ -1,0 +1,40 @@
+{% include "navbar_admin.html"%}
+{% block content %}
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Makanan</title>
+</head>
+<body>
+    <h1>Form Buat Makanan</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form" id="addMakanan">
+            <label for="NamaMakanan">Nama makanan</label>
+            <input id="NamaMakanan" name="NamaMakanan" type="text" placeholder="Nama makanan" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+            <label for="harga">Harga</label>
+            <input id="harga" name="harga" type="number" placeholder="Harga" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <label for="TingkatEnergi">Tingkat Energi</label>
+            <input id="TingkatEnergi" name="TingkatEnergi" type="number" placeholder="Tingkat Energi" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <label for="TingkatKelaparan">Tingkat kelaparan</label>
+            <input id="TingkatKelaparan" name="TingkatKelaparan" type="number" placeholder="Tingkat Kelaparan" required oninvalid="this.setCustomValidity('Data yang diisikan belum lengkap, silahkan lengkapi terlebih dahulu')" oninput="setCustomValidity('')"/>
+
+            <br />
+
+            <input id="adminButton" type="submit" values="Simpan" />
+        </div>
+    </form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Tokoh
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/tokoh/pemain_create_tokoh">Buat tokoh</a>
+                      <a class="dropdown-item" href="/tokoh/pemain_read_tokoh">List tokoh</a>
+                      <a class="dropdown-item" href="/warna_kulit/read_warna_kulit/">List warna kulit</a>
+                      <a class="dropdown-item" href="/level/read_level/">List level</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Pekerjaan
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/pekerjaan/read_pekerjaan">List pekerjaan</a>
+                      <a class="dropdown-item" href="/pekerjaan/pemain_create_bekerja">Buat bekerja</a>
+                      <a class="dropdown-item" href="/pekerjaan/read_bekerja">List Bekerja</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Misi
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/misi_utama/pemain_read_misi_utama">List misi utama</a>
+                      <a class="dropdown-item" href="/menjalankan_misi_utama/pemain_menjalankan_misi_utama">Buat menjalankan misi utama</a>
+                      <a class="dropdown-item" href="/menjalankan_misi_utama/pemain_read_menjalankan_misi_utama">List menjalankan misi utama</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Makan
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/makanan/pemain_read_makanan/">List makanan</a>
+                      <a class="dropdown-item" href="/makan/pemain_buat_makan/">Buat makan</a>
+                      <a class="dropdown-item" href="/makan/pemain_read_makan/">List makan</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Koleksi
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/koleksi/read">List koleksi</a>
+                      <a class="dropdown-item" href="/kategori_apparel/read">List kategori apparel</a>
+                      <a class="dropdown-item" href="/koleksi_tokoh/create">Buat koleksi tokoh</a>
+                      <a class="dropdown-item" href="/koleksi_tokoh/read">List koleksi tokoh</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Penggunaan
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/menggunakan_apparel/create_menggunakan_apparel">Buat menggunakan apparel</a>
+                      <a class="dropdown-item" href="/menggunakan_apparel/pemain_read_menggunakan_apparel">List menggunakan apparel</a>
+                      <a class="dropdown-item" href="/barang/menggunakan_barang">Buat menggunakan barang</a>
+                      <a class="dropdown-item" href="/barang/pemain_read_barang">List menggunakan barang</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        {% block content %}
+        {% endblock%}
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
+

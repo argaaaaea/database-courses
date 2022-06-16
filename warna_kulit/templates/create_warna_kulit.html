@@ -1,0 +1,26 @@
+{% include "navbar_admin.html"%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Buat Warna Kulit </title>
+</head>
+<body>
+    <h1> Hello {{username}} </h1>
+    <h2> Form Buat Warna Kulit </h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form" id="createWarnaKulit">
+            <label for="Kode">Kode: </label>
+            <input id="Kode" name="Kode" type="color" placeholder="Kode" />
+            <br>
+            <input id="adminButton" type="submit" values="Simpan" style="border-radius: 8px; border-color: black; color: #007BFF;" />
+        </div>
+    </form>
+</body>
+</html>
+{% endblock %}

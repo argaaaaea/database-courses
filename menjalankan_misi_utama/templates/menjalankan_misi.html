@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale">
+    <title>Menjalankan Misi Utama</title>
+</head>
+{% include "navbar_pemain.html"%}
+{% block content %}
+<body>
+    <h1>Form buat menjalankan misi utama</h1>
+    <div class="box">
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="div-row">
+                    <label for="NamaTokoh">Nama Tokoh</label>
+                        <select id="NamaTokoh" name="NamaTokoh">
+                            {% for i in tokoh %}
+                            <option {{ i.nama }}>{{ i.nama }}</option>
+                            {% endfor %}
+                        </select>
+                    <br />
+                </div>
+                <div class="div-row">
+                    <label for="NamaMisi">Nama Misi Utama</label>
+                        <select id="NamaMisi" name="NamaMisi">
+                            {% for m in misi_utama %}
+                            <option {{ m.nama_misi }}>{{ m.nama_misi }}</option>
+                            {% endfor %}
+                     </select>
+                    <br />
+                </div>
+                <div class="div-row">
+                    <input class="padded-button" type="submit" value="Simpan" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
+</html>

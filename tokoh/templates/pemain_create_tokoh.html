@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create tokoh</title>
+</head>
+<body>
+    <h1>Masukkan input untuk membuat tokoh</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="NamaTokoh">Nama</label>
+        <input id="NamaTokoh" name="NamaTokoh" type="text" placeholder="NamaTokoh" />
+
+        <br />
+        <label for="JenisKelamin">Jenis kelamin</label>
+
+        <select id="jenisKelaminSelect" name="jenisKelaminTokoh" placeholder="JenisKelamin">
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select>
+
+        <br />
+        <label for="WarnaKulit">Warna Kulit</label>
+
+        <select id="WarnaKulitSelect" name="WarnaKulit" placeholder="WarnaKulit">
+            {% for warna in warna_kulit %}
+            <option value='{{ warna.kode }}'>{{ warna.kode }}</option>
+            {% endfor %}
+        </select>
+
+        <br />
+        <label for="Pekerjaan">Pekerjaan</label>
+
+        <select id="PekerjaanSelect" name="Pekerjaan" placeholder="Pekerjaan">
+            {% for pekerjaan in pekerjaan %}
+            <option value='{{ pekerjaan.nama }}'>{{ pekerjaan.nama }}</option>
+            {% endfor %}
+        </select>
+
+            <input type="submit" value="Create" />
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
